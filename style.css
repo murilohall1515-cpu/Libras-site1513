@@ -1,0 +1,810 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee4ff,
+            #e5f6ff
+        );
+
+    color: #333;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+header {
+    width: 100%;
+
+    padding: 18px 7%;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #673ab7;
+}
+
+
+nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+
+nav a {
+    text-decoration: none;
+
+    color: #444;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+nav a:hover {
+    color: #673ab7;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   INÍCIO
+========================================= */
+
+.inicio {
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.inicio-conteudo {
+    max-width: 800px;
+}
+
+
+.emoji-grande {
+    font-size: 75px;
+}
+
+
+.inicio h1 {
+    font-size: 52px;
+
+    margin: 15px 0;
+
+    color: #673ab7;
+}
+
+
+.inicio p {
+    font-size: 21px;
+
+    color: #555;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.botao {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #673ab7;
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 7px 18px rgba(103, 58, 183, 0.25);
+
+    transition: 0.25s;
+}
+
+
+.botao:hover {
+    transform: translateY(-3px);
+
+    background: #512da8;
+}
+
+
+/* =========================================
+   CATEGORIAS
+========================================= */
+
+.categorias {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 25px;
+}
+
+
+.categorias h2 {
+    text-align: center;
+
+    font-size: 34px;
+
+    color: #673ab7;
+
+    margin-bottom: 10px;
+}
+
+
+.subtitulo {
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 40px;
+}
+
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+
+.card {
+    background: white;
+
+    padding: 30px 25px;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.25s;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.card-bloqueado {
+    opacity: 0.75;
+}
+
+
+.icone {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+    font-size: 24px;
+
+    color: #673ab7;
+
+    margin: 10px;
+}
+
+
+.card p {
+    color: #666;
+
+    line-height: 1.5;
+
+    min-height: 48px;
+}
+
+
+.card span {
+    color: #673ab7;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+.quiz-area {
+    margin: 70px auto 20px;
+
+    max-width: 800px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+.quiz-icone {
+    font-size: 55px;
+}
+
+
+.quiz-area h2 {
+    color: #673ab7;
+
+    font-size: 30px;
+
+    margin: 15px 0;
+}
+
+
+.quiz-area p {
+    color: #666;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+.botao-quiz {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #ff9800;
+
+    color: white;
+
+    padding: 16px 32px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+
+.botao-quiz:hover {
+    transform: translateY(-3px);
+
+    background: #f57c00;
+}
+
+
+/* =========================================
+   ALFABETO / NÚMEROS
+========================================= */
+
+.alfabeto,
+.numeros {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 60px 25px;
+
+    text-align: center;
+}
+
+
+.alfabeto h1,
+.numeros h1 {
+    color: #673ab7;
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+
+.alfabeto-intro,
+.numeros-intro {
+    color: #666;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BOTÃO GUIA
+========================================= */
+
+.botao-guia {
+    border: none;
+
+    background: #673ab7;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-bottom: 35px;
+
+    transition: 0.2s;
+}
+
+
+.botao-guia:hover {
+    background: #512da8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LETRAS
+========================================= */
+
+.letras {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(75px, 1fr)
+        );
+
+    gap: 15px;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.letra {
+    border: none;
+
+    background: white;
+
+    color: #673ab7;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    padding: 20px 10px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+
+.letra:hover {
+    background: #673ab7;
+
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   NÚMEROS
+========================================= */
+
+.grade-numeros {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(120px, 1fr)
+        );
+
+    gap: 20px;
+
+    max-width: 800px;
+
+    margin: 0 auto 40px;
+}
+
+
+.numero-card {
+    border: none;
+
+    background: white;
+
+    color: #673ab7;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+
+.numero-card:hover {
+    background: #673ab7;
+
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   VÍDEOS
+========================================= */
+
+.video-container,
+.video-numero {
+    max-width: 750px;
+
+    margin: 45px auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+.video-container h2,
+.video-numero h2 {
+    color: #673ab7;
+
+    margin-top: 0;
+}
+
+
+.video-container video,
+.video-numero video {
+    width: 100%;
+
+    max-height: 500px;
+
+    border-radius: 12px;
+
+    background: #111;
+}
+
+
+/* =========================================
+   GUIA / MODAL
+========================================= */
+
+.guia {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+.guia-conteudo {
+    position: relative;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    text-align: center;
+}
+
+
+.guia-conteudo h2 {
+    color: #673ab7;
+}
+
+
+.guia-conteudo img {
+    max-width: 100%;
+
+    max-height: 70vh;
+
+    border-radius: 12px;
+}
+
+
+.fechar-guia,
+.fechar-explicacao {
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+/* =========================================
+   EXPLICAÇÃO
+========================================= */
+
+.botao-explicacao {
+    border: none;
+
+    background: #673ab7;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+.janela-explicacao {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+.conteudo-explicacao {
+    position: relative;
+
+    background: white;
+
+    max-width: 700px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+}
+
+
+.conteudo-explicacao h2 {
+    color: #673ab7;
+}
+
+
+.audio-explicacao {
+    background: #f4efff;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    margin: 20px 0;
+}
+
+
+.audio-explicacao audio {
+    width: 100%;
+}
+
+
+.texto-explicacao {
+    color: #555;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+    margin-top: 60px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: white;
+
+    color: #666;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 650px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px;
+    }
+
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .inicio h1 {
+        font-size: 40px;
+    }
+
+
+    .inicio p {
+        font-size: 18px;
+    }
+
+
+    .alfabeto h1,
+    .numeros h1 {
+        font-size: 32px;
+    }
+
+
+    .letras {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .numero-card {
+        padding: 25px 15px;
+    }
+
+}

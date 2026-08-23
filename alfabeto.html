@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alfabeto em Libras</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <div class="logo">
+            🤟 Aprenda Libras
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="alfabeto.html">
+                Alfabeto
+            </a>
+
+            <a href="numeros.html">
+                Números
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ALFABETO -->
+    <main>
+
+        <section class="alfabeto">
+
+            <h1>
+                Alfabeto em Libras 🤟
+            </h1>
+
+            <p class="alfabeto-intro">
+                Clique em uma letra para aprender o sinal.
+            </p>
+
+
+            <!-- BOTÃO DO GUIA -->
+            <button
+                class="botao-guia"
+                onclick="abrirGuia()"
+            >
+                🖼️ Imagem do Alfabeto
+            </button>
+
+
+            <!-- LETRAS -->
+            <div
+                class="letras"
+                id="letras"
+            >
+            </div>
+
+
+            <!-- VÍDEO -->
+            <div
+                class="video-container"
+                id="videoContainer"
+                style="display: none;"
+            >
+
+                <h2 id="tituloVideo">
+                    Letra A
+                </h2>
+
+                <video
+                    id="video"
+                    controls
+                    playsinline
+                >
+
+                    <source
+                        id="videoSource"
+                        src=""
+                        type="video/mp4"
+                    >
+
+                    Seu navegador não conseguiu carregar este vídeo.
+
+                </video>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- GUIA -->
+    <div
+        id="guiaAlfabeto"
+        class="guia"
+    >
+
+        <div class="guia-conteudo">
+
+            <button
+                class="fechar-guia"
+                onclick="fecharGuia()"
+            >
+                ×
+            </button>
+
+            <h2>
+                📖 Guia do Alfabeto
+            </h2>
+
+            <img
+                src="imagens/alfabeto.png"
+                alt="Imagem do alfabeto em Libras"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            Projeto Aprenda Libras • 9º Ano
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* ================================
+           VÍDEOS DO ALFABETO
+        ================================= */
+
+        const videos = {
+
+            "A": "videos do alfabeto/letra-a.mp4.mp4",
+            "B": "videos do alfabeto/letra-b.mp4.mp4",
+            "C": "videos do alfabeto/letra-c.mp4.mp4",
+            "D": "videos do alfabeto/letra-d.mp4.mp4",
+            "E": "videos do alfabeto/letra-e.mp4.mp4",
+            "F": "videos do alfabeto/letra-f.mp4.mp4",
+            "G": "videos do alfabeto/letra-g.mp4.mp4",
+            "H": "videos do alfabeto/letra-h.mp4.mp4",
+            "I": "videos do alfabeto/letra-i.mp4.mp4",
+            "J": "videos do alfabeto/letra-j.mp4.mp4",
+            "K": "videos do alfabeto/letra-k.mp4.mp4",
+            "L": "videos do alfabeto/letra-l.mp4.mp4",
+            "M": "videos do alfabeto/letra-m.mp4.mp4",
+            "N": "videos do alfabeto/letra-n.mp4.mp4",
+            "O": "videos do alfabeto/letra-o.mp4.mp4",
+            "P": "videos do alfabeto/letra-p.mp4.mp4",
+            "Q": "videos do alfabeto/letra-q.mp4.mp4",
+            "R": "videos do alfabeto/letra-r.mp4.mp4",
+            "S": "videos do alfabeto/letra-s.mp4.mp4",
+            "T": "videos do alfabeto/letra-t.mp4.mp4",
+            "U": "videos do alfabeto/letra-u.mp4.mp4",
+            "V": "videos do alfabeto/letra-v.mp4.mp4",
+            "W": "videos do alfabeto/letra-w.mp4.mp4",
+            "X": "videos do alfabeto/letra-x.mp4.mp4",
+            "Y": "videos do alfabeto/letra-y.mp4.mp4",
+            "Z": "videos do alfabeto/letra-z.mp4.mp4",
+
+            "Ç": "videos do alfabeto/letra-ç.mp4.mp4"
+
+        };
+
+
+        /* ================================
+           LETRAS
+        ================================= */
+
+        const letras = [
+
+            "A", "B", "C", "Ç",
+            "D", "E", "F", "G",
+            "H", "I", "J", "K",
+            "L", "M", "N", "O",
+            "P", "Q", "R", "S",
+            "T", "U", "V", "W",
+            "X", "Y", "Z"
+
+        ];
+
+
+        const areaLetras =
+            document.getElementById("letras");
+
+
+        for (let letra of letras) {
+
+            const botao =
+                document.createElement("button");
+
+            botao.classList.add("letra");
+
+            botao.textContent = letra;
+
+            botao.onclick = function () {
+
+                mostrarVideo(letra);
+
+            };
+
+            areaLetras.appendChild(botao);
+
+        }
+
+
+        /* ================================
+           MOSTRAR VÍDEO
+        ================================= */
+
+        let ultimaLetra = "";
+
+
+        function mostrarVideo(letra) {
+
+            const container =
+                document.getElementById("videoContainer");
+
+            const titulo =
+                document.getElementById("tituloVideo");
+
+            const video =
+                document.getElementById("video");
+
+            const source =
+                document.getElementById("videoSource");
+
+
+            /* Se clicar novamente,
+               fecha o vídeo */
+
+            if (ultimaLetra === letra) {
+
+                video.pause();
+
+                video.removeAttribute("src");
+
+                source.removeAttribute("src");
+
+                video.load();
+
+                container.style.display = "none";
+
+                ultimaLetra = "";
+
+                return;
+
+            }
+
+
+            /* Título */
+
+            titulo.textContent =
+                "Letra " + letra;
+
+
+            /* Vídeo */
+
+            if (videos[letra]) {
+
+                source.src =
+                    videos[letra];
+
+                video.load();
+
+                container.style.display =
+                    "block";
+
+                ultimaLetra =
+                    letra;
+
+
+                container.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "center"
+
+                });
+
+            }
+
+        }
+
+
+        /* ================================
+           ABRIR GUIA
+        ================================= */
+
+        function abrirGuia() {
+
+            document.getElementById(
+                "guiaAlfabeto"
+            ).style.display = "flex";
+
+        }
+
+
+        /* ================================
+           FECHAR GUIA
+        ================================= */
+
+        function fecharGuia() {
+
+            document.getElementById(
+                "guiaAlfabeto"
+            ).style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

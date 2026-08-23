@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Números em Libras</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <div class="logo">
+            🤟 Aprenda Libras
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="alfabeto.html">
+                Alfabeto
+            </a>
+
+            <a href="numeros.html">
+                Números
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- NÚMEROS -->
+    <main>
+
+        <section class="numeros">
+
+            <h1>
+                Números em Libras 🔢
+            </h1>
+
+            <p class="numeros-intro">
+                Clique em um número para aprender o sinal.
+            </p>
+
+
+            <!-- GUIA -->
+            <button
+                class="botao-guia"
+                onclick="abrirGuia()"
+            >
+                🖼️ Imagem dos Números
+            </button>
+
+
+            <!-- NÚMEROS -->
+            <div class="grade-numeros">
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(0)"
+                >
+                    0
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(1)"
+                >
+                    1
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(2)"
+                >
+                    2
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(3)"
+                >
+                    3
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(4)"
+                >
+                    4
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(5)"
+                >
+                    5
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(6)"
+                >
+                    6
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(7)"
+                >
+                    7
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(8)"
+                >
+                    8
+                </button>
+
+                <button
+                    class="numero-card"
+                    onclick="mostrarNumero(9)"
+                >
+                    9
+                </button>
+
+            </div>
+
+
+            <!-- VÍDEO -->
+            <div
+                id="videoNumero"
+                class="video-numero"
+                style="display: none;"
+            >
+
+                <h2 id="tituloNumero">
+                    Número
+                </h2>
+
+                <video
+                    id="video"
+                    controls
+                    playsinline
+                >
+
+                    Seu navegador não conseguiu carregar este vídeo.
+
+                </video>
+
+            </div>
+
+
+            <!-- EXPLICAÇÃO -->
+            <button
+                class="botao-explicacao"
+                onclick="abrirExplicacao()"
+            >
+                📖 Explicação
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- GUIA DOS NÚMEROS -->
+    <div
+        id="guiaNumeros"
+        class="guia"
+    >
+
+        <div class="guia-conteudo">
+
+            <button
+                class="fechar-guia"
+                onclick="fecharGuia()"
+            >
+                ×
+            </button>
+
+            <h2>
+                📖 Tabela dos Números
+            </h2>
+
+            <img
+                src="imagens/numeros.jpeg"
+                alt="Tabela dos números em Libras"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- EXPLICAÇÃO -->
+    <div
+        id="janelaExplicacao"
+        class="janela-explicacao"
+    >
+
+        <div class="conteudo-explicacao">
+
+            <button
+                class="fechar-explicacao"
+                onclick="fecharExplicacao()"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                📖 Explicação
+            </h2>
+
+
+            <div class="audio-explicacao">
+
+                <h3>
+                    🔊 Ouça a explicação
+                </h3>
+
+                <audio controls>
+
+                    <source
+                        src="audios/explicacao-numeros.mp3"
+                        type="audio/mpeg"
+                    >
+
+                    Seu navegador não suporta áudio.
+
+                </audio>
+
+            </div>
+
+
+            <div class="texto-explicacao">
+
+                <h3>
+                    Explicação
+                </h3>
+
+                <p>
+                    Em Libras, os números possuem sinais
+                    utilizados para representar quantidades,
+                    idades, datas e outras informações.
+                </p>
+
+                <p>
+                    Clique em cada número para assistir
+                    ao vídeo e aprender o sinal.
+                </p>
+
+                <p>
+                    Use a tabela dos números como guia
+                    durante seus estudos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            Projeto Aprenda Libras • 9º Ano
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        /* ================================
+           VÍDEOS
+        ================================= */
+
+        const videos = {
+
+            0: "Numeros videos/VID-20260816-WA0001.mp4",
+
+            1: "Numeros videos/VID-20260814-WA0014.mp4",
+
+            2: "Numeros videos/VID-20260814-WA0015.mp4",
+
+            3: "Numeros videos/VID-20260814-WA0016.mp4",
+
+            4: "Numeros videos/VID-20260814-WA0018 - Copia.mp4",
+
+            5: "Numeros videos/VID-20260814-WA0028.mp4",
+
+            6: "Numeros videos/VID-20260814-WA0029.mp4",
+
+            7: "Numeros videos/VID-20260814-WA0030.mp4",
+
+            8: "Numeros videos/VID-20260814-WA0031.mp4",
+
+            9: "Numeros videos/VID-20260814-WA0032.mp4"
+
+        };
+
+
+        /* ================================
+           MOSTRAR VÍDEO
+        ================================= */
+
+        let ultimoNumero = "";
+
+
+        function mostrarNumero(numero) {
+
+            const video =
+                document.getElementById("video");
+
+            const caixa =
+                document.getElementById("videoNumero");
+
+            const titulo =
+                document.getElementById("tituloNumero");
+
+
+            /* Fechar se clicar novamente */
+
+            if (ultimoNumero === numero) {
+
+                video.pause();
+
+                video.removeAttribute("src");
+
+                video.load();
+
+                caixa.style.display =
+                    "none";
+
+                ultimoNumero = "";
+
+                return;
+
+            }
+
+
+            /* Título */
+
+            titulo.textContent =
+                "Número " + numero;
+
+
+            /* Vídeo */
+
+            if (videos[numero]) {
+
+                video.src =
+                    videos[numero];
+
+                video.load();
+
+                caixa.style.display =
+                    "block";
+
+                ultimoNumero =
+                    numero;
+
+
+                caixa.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "center"
+
+                });
+
+            }
+
+        }
+
+
+        /* ================================
+           GUIA
+        ================================= */
+
+        function abrirGuia() {
+
+            document.getElementById(
+                "guiaNumeros"
+            ).style.display = "flex";
+
+        }
+
+
+        function fecharGuia() {
+
+            document.getElementById(
+                "guiaNumeros"
+            ).style.display = "none";
+
+        }
+
+
+        /* ================================
+           EXPLICAÇÃO
+        ================================= */
+
+        function abrirExplicacao() {
+
+            document.getElementById(
+                "janelaExplicacao"
+            ).style.display = "flex";
+
+        }
+
+
+        function fecharExplicacao() {
+
+            document.getElementById(
+                "janelaExplicacao"
+            ).style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
